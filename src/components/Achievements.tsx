@@ -14,7 +14,7 @@ const Achievements = () => {
       description: "Participated in intensive web development competition, building innovative web solutions under time constraints.",
       date: "2024",
       certificateUrl: certificates.webathon,
-      type: "Web Development",
+      type: "Hackathon Winner",
     },
     {
       title: "TechnoVista 2024 - 24Hr Hackathon",
@@ -71,23 +71,17 @@ const Achievements = () => {
     <section id="achievements" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-6">
         {/* Header */}
+        
+
+
+
+        {/* Certifications Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Achievements and Certifications
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Milestones and recognitions that mark my journey
-          </p>
-        </div>
-
-
-
-        {/* Certifications Section */}
-        <div className="text-center mb-12">
-         
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Continuous learning through technical courses, workshops, and professional development programs
-          </p>
+          Recognitions and continuous learning through achievements, certifications, and professional development.          </p> 
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
