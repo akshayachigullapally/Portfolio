@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Download, ExternalLink } from "lucide-react";
 import AnimatedTagline from "./AnimatedTagline";
+import { ResumeAkshaya } from "@/assets/certificates";
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -52,7 +53,7 @@ const Hero = () => {
               size="lg"
               asChild
             >
-              <a href="/resume.pdf" download className="group">
+              <a href={ResumeAkshaya} download className="group">
                 Download Resume
                 <Download className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
               </a>
