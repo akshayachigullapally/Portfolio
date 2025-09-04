@@ -30,7 +30,7 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="font-logo font-bold text-xl text-primary">
+          <div className="font-logo font-bold text-xl md:text-xl text-primary">
             Akshaya Chigullapally
           </div>
 
