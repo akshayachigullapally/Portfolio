@@ -28,67 +28,68 @@ const Header = () => {
         scrolled ? "bg-background/80 backdrop-blur-md border-b border-primary/20" : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <div className="font-logo font-bold text-xl md:text-xl text-primary">
-            Akshaya Chigullapally
+          <div className="text-header-name font-logo font-bold text-primary truncate">
+            <span className="hidden sm:inline">Akshaya Chigullapally</span>
+            <span className="sm:hidden">Akshaya C.</span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <button 
               onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection("projects")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
             >
               Projects
             </button>
             <button 
               onClick={() => scrollToSection("achievements")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
             >
               Achievements
             </button>
             <button 
               onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
             >
               Experience
             </button>
             <button 
               onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
             >
               Skills
             </button>
             <button 
               onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
             >
               Contact
             </button>
           </div>
 
           {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="icon" asChild>
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
+            <Button variant="ghost" size="icon" asChild className="h-8 w-8 lg:h-9 lg:w-9">
               <a href="https://github.com/akshayachigullapally" target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5" />
+                <Github className="h-4 w-4 lg:h-5 lg:w-5" />
               </a>
             </Button>
-            <Button variant="ghost" size="icon" asChild>
+            <Button variant="ghost" size="icon" asChild className="h-8 w-8 lg:h-9 lg:w-9">
               <a href="https://www.linkedin.com/in/akshaya-chigullapally/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-4 w-4 lg:h-5 lg:w-5" />
               </a>
             </Button>
-            <Button variant="ghost" size="icon" asChild>
+            <Button variant="ghost" size="icon" asChild className="h-8 w-8 lg:h-9 lg:w-9">
               <a href="mailto:akshayachigullapally1@gmail.com">
-                <Mail className="h-5 w-5" />
+                <Mail className="h-4 w-4 lg:h-5 lg:w-5" />
               </a>
             </Button>
           </div>
@@ -97,65 +98,46 @@ const Header = () => {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="md:hidden"
+            className="lg:hidden h-8 w-8"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 p-4 bg-card/95 backdrop-blur-md rounded-lg border border-primary/20">
+          <div className="lg:hidden mt-4 p-4 bg-card/95 backdrop-blur-md rounded-lg border border-primary/20 mx-2">
             <div className="flex flex-col space-y-4">
-              <button 
-                onClick={() => scrollToSection("about")}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection("projects")}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Projects
-              </button>
-              <button 
-                onClick={() => scrollToSection("achievements")}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Achievements
-              </button>
-              <button 
-                onClick={() => scrollToSection("about")}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Experience
-              </button>
-              <button 
-                onClick={() => scrollToSection("about")}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Skills
-              </button>
-              <button 
-                onClick={() => scrollToSection("contact")}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Contact
-              </button>
-              <div className="flex items-center space-x-4 pt-4 border-t border-primary/20">
-                <Button variant="ghost" size="icon" asChild>
+              {[
+                { label: "About", section: "about" },
+                { label: "Projects", section: "projects" },
+                { label: "Achievements", section: "achievements" },
+                { label: "Experience", section: "about" },
+                { label: "Skills", section: "about" },
+                { label: "Contact", section: "contact" },
+              ].map(({ label, section }) => (
+                <button 
+                  key={label}
+                  onClick={() => scrollToSection(section)}
+                  className="text-left text-foreground hover:text-primary transition-colors py-2"
+                >
+                  {label}
+                </button>
+              ))}
+              
+              <div className="flex items-center justify-center space-x-4 pt-4 border-t border-primary/20">
+                <Button variant="ghost" size="icon" asChild className="h-9 w-9">
                   <a href="https://github.com/akshayachigullapally" target="_blank" rel="noopener noreferrer">
                     <Github className="h-5 w-5" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="icon" asChild>
+                <Button variant="ghost" size="icon" asChild className="h-9 w-9">
                   <a href="https://www.linkedin.com/in/akshaya-chigullapally/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-5 w-5" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="icon" asChild>
+                <Button variant="ghost" size="icon" asChild className="h-9 w-9">
                   <a href="mailto:akshayachigullapally1@gmail.com">
                     <Mail className="h-5 w-5" />
                   </a>

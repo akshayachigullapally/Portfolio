@@ -175,20 +175,20 @@ const academicProjects = [
 
 const Projects = () => {
 	return (
-		<section id="projects" className="py-20 bg-muted/30">
-			<div className="container mx-auto px-6">
-				<div className="text-center mb-16">
-					<h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+		<section id="projects" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
+			<div className="container mx-auto px-4 sm:px-6">
+				<div className="text-center mb-12 sm:mb-16">
+					<h2 className="font-heading text-responsive-4xl lg:text-5xl font-bold text-foreground mb-4">
 						Featured <span className="text-primary">Projects</span>
 					</h2>
-					<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+					<p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
 						A showcase of my personal and academic projects demonstrating
 						full-stack development skills
 					</p>
 				</div>
 
 				{/* Personal Projects */}
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+				<div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
 					{personalProjects.map((project, index) => (
 						<Card
 							key={index}
@@ -199,13 +199,13 @@ const Projects = () => {
 									<img
 										src={project.image}
 										alt={`${project.title} preview`}
-										className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+										className="w-full h-48 sm:h-52 object-cover group-hover:scale-110 transition-transform duration-300"
 									/>
 									{project.featured && (
-										<div className="absolute top-4 right-4">
+										<div className="absolute top-3 sm:top-4 right-3 sm:right-4">
 											<Badge
 												variant="secondary"
-												className="bg-primary/10 text-primary border-primary/20"
+												className="bg-primary/10 text-primary border-primary/20 text-xs"
 											>
 												<Award className="h-3 w-3 mr-1" />
 												Featured
@@ -214,7 +214,7 @@ const Projects = () => {
 									)}
 									{project.award && (
 										<div className="absolute top-2 left-2">
-											<div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
+											<div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
 												🏆 {project.award}
 											</div>
 										</div>
@@ -222,16 +222,16 @@ const Projects = () => {
 								</div>
 							</CardHeader>
 
-							<CardContent className="p-6">
-								<CardTitle className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+							<CardContent className="p-4 sm:p-6">
+								<CardTitle className="text-lg sm:text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
 									{project.title}
 								</CardTitle>
 
-								<CardDescription className="text-muted-foreground mb-4 line-clamp-3">
+								<CardDescription className="text-sm sm:text-base text-muted-foreground mb-4 line-clamp-3">
 									{project.description}
 								</CardDescription>
 
-								<div className="flex flex-wrap gap-2 mb-6">
+								<div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
 									{project.technologies.map((tech) => (
 										<Badge key={tech} variant="outline" className="text-xs">
 											{tech}
@@ -239,11 +239,11 @@ const Projects = () => {
 									))}
 								</div>
 
-								<div className="flex gap-3">
+								<div className="flex flex-col xs:flex-row gap-2 sm:gap-3">
 									<Button
 										variant="outline"
 										size="sm"
-										className="flex-1"
+										className="flex-1 text-xs sm:text-sm"
 										asChild
 									>
 										<a
@@ -252,7 +252,7 @@ const Projects = () => {
 											rel="noopener noreferrer"
 											className="group/btn"
 										>
-											<Github className="h-4 w-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
+											<Github className="h-3 w-3 sm:h-4 sm:w-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
 											Code
 										</a>
 									</Button>
@@ -261,7 +261,7 @@ const Projects = () => {
 										<Button
 											variant="hero"
 											size="sm"
-											className="flex-1"
+											className="flex-1 text-xs sm:text-sm"
 											asChild
 										>
 											<a
@@ -270,7 +270,7 @@ const Projects = () => {
 												rel="noopener noreferrer"
 												className="group/btn"
 											>
-												<ExternalLink className="h-4 w-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
+												<ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
 												Demo
 											</a>
 										</Button>
@@ -282,18 +282,18 @@ const Projects = () => {
 				</div>
 
 				{/* Academic Projects */}
-				<div className="mb-16">
-					<div className="text-center mb-12">
-						<h3 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+				<div className="mb-12 sm:mb-16">
+					<div className="text-center mb-8 sm:mb-12">
+						<h3 className="font-heading text-responsive-3xl lg:text-4xl font-bold text-foreground mb-4">
 							Academic <span className="text-primary">Projects</span>
 						</h3>
-						<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+						<p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
 							Club and college-based projects showcasing collaborative
 							development and technical leadership
 						</p>
 					</div>
 
-					<div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
 						{academicProjects.map((project, index) => (
 							<Card
 								key={index}
@@ -304,12 +304,12 @@ const Projects = () => {
 										<img
 											src={project.image}
 											alt={`${project.title} preview`}
-											className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+											className="w-full h-48 sm:h-52 object-cover group-hover:scale-110 transition-transform duration-300"
 										/>
-										<div className="absolute top-4 right-4">
+										<div className="absolute top-3 sm:top-4 right-3 sm:right-4">
 											<Badge
 												variant="secondary"
-												className="bg-secondary/20 text-secondary border-secondary/30"
+												className="bg-secondary/20 text-secondary border-secondary/30 text-xs"
 											>
 												Academic Project
 											</Badge>
@@ -317,16 +317,16 @@ const Projects = () => {
 									</div>
 								</CardHeader>
 
-								<CardContent className="p-6">
-									<CardTitle className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+								<CardContent className="p-4 sm:p-6">
+									<CardTitle className="text-lg sm:text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
 										{project.title}
 									</CardTitle>
 
-									<CardDescription className="text-muted-foreground mb-4 line-clamp-3">
+									<CardDescription className="text-sm sm:text-base text-muted-foreground mb-4 line-clamp-3">
 										{project.description}
 									</CardDescription>
 
-									<div className="flex flex-wrap gap-2 mb-6">
+									<div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
 										{project.technologies.map((tech) => (
 											<Badge
 												key={tech}
@@ -338,11 +338,11 @@ const Projects = () => {
 										))}
 									</div>
 
-									<div className="flex gap-3">
+									<div className="flex flex-col xs:flex-row gap-2 sm:gap-3">
 										<Button
 											variant="outline"
 											size="sm"
-											className="flex-1 border-primary/30 hover:bg-primary/10"
+											className="flex-1 border-primary/30 hover:bg-primary/10 text-xs sm:text-sm"
 											asChild
 										>
 											<a
@@ -351,7 +351,7 @@ const Projects = () => {
 												rel="noopener noreferrer"
 												className="group/btn"
 											>
-												<Github className="h-4 w-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
+												<Github className="h-3 w-3 sm:h-4 sm:w-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
 												Code
 											</a>
 										</Button>
@@ -360,7 +360,7 @@ const Projects = () => {
 											<Button
 												variant="hero"
 												size="sm"
-												className="flex-1"
+												className="flex-1 text-xs sm:text-sm"
 												asChild
 											>
 												<a
@@ -369,7 +369,7 @@ const Projects = () => {
 													rel="noopener noreferrer"
 													className="group/btn"
 												>
-													<ExternalLink className="h-4 w-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
+													<ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
 													Demo
 												</a>
 											</Button>
@@ -383,16 +383,16 @@ const Projects = () => {
 
 				{/* Call to Action */}
 				<div className="text-center">
-					<Button variant="outline" size="lg" asChild>
+					<Button variant="outline" size="lg" asChild className="w-full xs:w-auto">
 						<a
 							href="https://github.com/akshayachigullapally"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="group"
 						>
-							<Github className="h-5 w-5 mr-3 group-hover:rotate-12 transition-transform" />
+							<Github className="h-4 w-4 sm:h-5 sm:w-5 mr-3 group-hover:rotate-12 transition-transform" />
 							View All Projects on GitHub
-							<ExternalLink className="h-4 w-4 ml-3 group-hover:translate-x-1 transition-transform" />
+							<ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 ml-3 group-hover:translate-x-1 transition-transform" />
 						</a>
 					</Button>
 				</div>

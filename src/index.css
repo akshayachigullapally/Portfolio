@@ -74,15 +74,44 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
   
-  /* Enhanced typography for large names */
+  /* Enhanced responsive typography */
   .text-hero-name {
-    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-size: clamp(1.875rem, 6vw, 6rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
   
   .text-header-name {
-    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     line-height: 1.2;
+  }
+  
+  /* Mobile-first responsive headings */
+  .text-responsive-xl {
+    font-size: clamp(1.25rem, 4vw, 1.875rem);
+  }
+  
+  .text-responsive-2xl {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+  }
+  
+  .text-responsive-3xl {
+    font-size: clamp(1.875rem, 6vw, 3rem);
+  }
+  
+  .text-responsive-4xl {
+    font-size: clamp(2.25rem, 7vw, 3.75rem);
+  }
+  
+  .text-responsive-5xl {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+  }
+  
+  /* Mobile improvements */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }
