@@ -76,9 +76,13 @@ All colors MUST be HSL.
   
   /* Enhanced responsive typography */
   .text-hero-name {
-    font-size: clamp(1.875rem, 6vw, 6rem);
+    font-size: clamp(2.25rem, 7vw, 7rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
   
   .text-header-name {
@@ -112,6 +116,20 @@ All colors MUST be HSL.
     .container {
       padding-left: 1rem;
       padding-right: 1rem;
+    }
+  }
+
+  /* Ensure name stays on one line on larger screens */
+  @media (min-width: 1280px) {
+    .text-hero-name {
+      font-size: clamp(4rem, 5vw, 6.5rem);
+    }
+  }
+
+  /* Extra large screens */
+  @media (min-width: 1536px) {
+    .text-hero-name {
+      font-size: clamp(5rem, 5.5vw, 7rem);
     }
   }
 }

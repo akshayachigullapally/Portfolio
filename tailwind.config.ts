@@ -162,6 +162,13 @@ export default {
 				'18': '4.5rem',
 				'88': '22rem',
 				'128': '32rem',
+			},
+			utilities: {
+				'.text-single-line': {
+					'white-space': 'nowrap',
+					'overflow': 'hidden',
+					'text-overflow': 'ellipsis',
+				},
 			}
 		}
 	},

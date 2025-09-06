@@ -19,13 +19,15 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="container mx-auto text-center relative z-10 max-w-6xl">
+      <div className="container mx-auto text-center relative z-10 max-w-7xl">
         <div className="space-y-6 sm:space-y-8">
-          <h1 className="text-hero-name font-heading font-bold text-foreground animate-fade-in">
-            <span className="bg-gradient-primary bg-clip-text text-transparent block">
-              Akshaya Chigullapally
-            </span>
-          </h1>
+          <div className="w-full flex justify-center">
+            <h1 className="text-hero-name font-heading font-bold text-foreground animate-fade-in inline-block">
+              <span className="bg-gradient-primary bg-clip-text text-transparent whitespace-nowrap">
+                Akshaya Chigullapally
+              </span>
+            </h1>
+          </div>
           
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground animate-fade-in delay-200">
             <AnimatedTagline />
