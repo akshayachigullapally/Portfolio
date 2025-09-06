@@ -64,7 +64,7 @@ const About = () => {
           </Card>
 
           {/* Work Experience Section */}
-          <Card className="bg-card/50 backdrop-blur-sm border-border/50 mb-8 sm:mb-12">
+          <Card id="experience" className="bg-card/50 backdrop-blur-sm border-border/50 mb-8 sm:mb-12">
             <CardContent className="p-6 sm:p-8">
               <h3 className="text-responsive-2xl font-bold text-foreground mb-6 sm:mb-8 text-center">
                 Work <span className="text-primary">Experience</span>

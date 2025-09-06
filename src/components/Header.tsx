@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="text-header-name font-logo font-bold text-primary truncate">
             <span className="hidden sm:inline">Akshaya Chigullapally</span>
-            <span className="sm:hidden">Akshaya C.</span>
+            <span className="sm:hidden">Akshaya</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -42,6 +42,18 @@ const Header = () => {
               className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
             >
               About
+            </button>
+             <button 
+              onClick={() => scrollToSection("experience")}
+              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
+            >
+              Experience
+            </button>
+            <button 
+              onClick={() => scrollToSection("skills")}
+              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
+            >
+              Skills
             </button>
             <button 
               onClick={() => scrollToSection("projects")}
@@ -54,18 +66,6 @@ const Header = () => {
               className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
             >
               Achievements
-            </button>
-            <button 
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
-            >
-              Experience
-            </button>
-            <button 
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors text-sm xl:text-base"
-            >
-              Skills
             </button>
             <button 
               onClick={() => scrollToSection("contact")}
@@ -111,10 +111,10 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               {[
                 { label: "About", section: "about" },
+                { label: "Experience", section: "experience" },
+                { label: "Skills", section: "skills" },
                 { label: "Projects", section: "projects" },
                 { label: "Achievements", section: "achievements" },
-                { label: "Experience", section: "about" },
-                { label: "Skills", section: "about" },
                 { label: "Contact", section: "contact" },
               ].map(({ label, section }) => (
                 <button 
