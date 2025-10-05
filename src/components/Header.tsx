@@ -22,6 +22,11 @@ const Header = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsMenuOpen(false);
+  };
+
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -30,10 +35,13 @@ const Header = () => {
     >
       <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <div className="text-header-name font-logo font-bold text-primary truncate">
+          <button 
+            onClick={scrollToTop}
+            className="text-header-name font-logo font-bold text-primary truncate hover:text-primary/80 transition-colors cursor-pointer"
+          >
             <span className="hidden sm:inline">Akshaya Chigullapally</span>
             <span className="sm:hidden">Akshaya</span>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
