@@ -7,6 +7,7 @@ import CPlusPlusCertificate from './Programming in Modern C++.pdf';
 import ResumeAkshaya from './Resume_Akshaya.pdf';
 import TableauCertificate from './Tableau Training - Certificate of Completion.pdf';
 import WebathonCertificate from './Webathon .pdf';
+import FlipkartGridCertificate from './Flipkart GRID.pdf'; // Add this import
 
 // Export all certificates
 export {
@@ -18,6 +19,7 @@ export {
   ResumeAkshaya,
   TableauCertificate,
   WebathonCertificate,
+  FlipkartGridCertificate, // Add this export
 };
 
 // Certificate mapping for easy access
@@ -30,6 +32,7 @@ export const certificates = {
   resume: ResumeAkshaya,
   tableau: TableauCertificate,
   webathon: WebathonCertificate,
+  flipkartGrid: FlipkartGridCertificate, // Add this mapping
 } as const;
 
 export type CertificateKey = keyof typeof certificates;

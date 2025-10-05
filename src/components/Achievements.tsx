@@ -5,16 +5,14 @@ import { Trophy, Award, Calendar, ExternalLink } from "lucide-react";
 import { certificates } from "@/assets/certificates";
 
 const Achievements = () => {
- 
-
   const certifications = [
     {
-      title: "Webathon Challenge",
+      title: "Webathon Challenge ",
       issuer: "Technical Competition",
-      description: "Participated in intensive web development competition, building innovative web solutions under time constraints.",
+      description: "Won 1st place in a 24-hour hackathon, building and deploying an innovative web solution under tight deadlines. Demonstrated strong problem-solving, full-stack development, and teamwork skills. Recognized for technical excellence and creativity.",
       date: "2024",
       certificateUrl: certificates.webathon,
-      type: "Hackathon Winner",
+      type: "🥇 Hackathon Winner",
     },
     {
       title: "TechnoVista 2024 - 24Hr Hackathon",
@@ -24,7 +22,14 @@ const Achievements = () => {
       certificateUrl: certificates.generalCertificate,
       type: "Hackathon Finalist",
     },
-    
+    {
+      title: "Flipkart Grid 6.0",
+      issuer: "Flipkart",
+      description: "Participated in Flipkart Grid 6.0, India's largest student e-commerce tech challenge, demonstrating problem-solving skills and innovative thinking in e-commerce technology solutions.",
+      date: "2024",
+      certificateUrl: certificates.flipkartGrid,
+      type: "Competition",
+    },
     {
       title: "Flutter Workshop Certification",
       issuer: "VNRVJIET - Convergence 2K23",
@@ -86,7 +91,7 @@ const Achievements = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105 bg-card/40 backdrop-blur-sm border-primary/20 hover:border-primary/40">
+            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105 bg-card/40 backdrop-blur-sm border-primary/20 hover:border-primary/40 flex flex-col">
               <CardHeader className="pb-3">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300">
@@ -107,11 +112,11 @@ const Achievements = () => {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="pt-0">
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+              <CardContent className="pt-0 flex flex-col flex-grow">
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-grow">
                   {cert.description}
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-auto pt-2">
                   <div className="flex items-center gap-1 text-xs text-muted-foreground">
                     <Calendar className="h-3 w-3" />
                     <span className="font-medium">{cert.date}</span>
